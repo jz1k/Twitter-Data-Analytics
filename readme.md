@@ -1,4 +1,4 @@
-# Twitter Data Analytics - Juan Carlos Bailon Rubi
+# Twitter Data Analytics
 
 Este proyecto tiene como objetivo analizar datos de Twitter, abarcando desde la extracción y procesamiento de datos hasta su visualización en Power BI. A continuación se detallan los pasos y componentes del proyecto:
 
@@ -15,7 +15,7 @@ Este proyecto tiene como objetivo analizar datos de Twitter, abarcando desde la 
 
 Este proyecto se centra en el análisis de datos de Twitter para extraer información valiosa a través de diferentes etapas, desde la ingesta de datos hasta su análisis y visualización.
 
-![esquema proyecto](https://github.com/jz1k/Twitter-Data-Analytics/tree/main/capturas/diagrama.png)
+![esquema proyecto](https://github.com/jz1k/Twitter-Data-Analytics/blob/main/capturas/diagrama.png?raw=true)
 
 ## Creación Diagrama BBDD
 
@@ -26,21 +26,21 @@ Este proyecto se centra en el análisis de datos de Twitter para extraer informa
   - `tuits.id_sentimiento < sentimientos.id`: Un tuit puede tener asociado uno o más sentimientos.
   - `tuits.id_tema_conversacion - temas_conversacion.id`: Un tuit puede estar asociado a un tema de conversación.
 
-  ![diagrama e-r](https://github.com/jz1k/Twitter-Data-Analytics/tree/main/capturas/bbdd.png)
+  ![diagrama e-r](https://github.com/jz1k/Twitter-Data-Analytics/blob/main/capturas/bbdd.png?raw=true)
 
 ## Blob Storage, Pipelines y DataFlow
 
 - **Organización de BlobStorage**:
   - Los datos se obtienen y filtran mediante variables, luego se procesan los datos de todos los CSV (viewnext, hiberus, minsait y nttdata).
-    ![estructura](https://github.com/jz1k/Twitter-Data-Analytics/tree/main/capturas/tree.jpg)
+    ![estructura](https://github.com/jz1k/Twitter-Data-Analytics/blob/main/capturas/tree.jpg?raw=true)
   - Los datos RAW se combinan con la Localización y los Temas de cada empresa mediante un JOIN por ID.
-    ![get](https://github.com/jz1k/Twitter-Data-Analytics/tree/main/capturas/get.jpg)
+    ![get](https://github.com/jz1k/Twitter-Data-Analytics/blob/main/capturas/get.jpg?raw=true)
   - Se añade una columna indicando a qué empresa pertenecen esos datos para su visualización e implementación en la BBDD SQL.
-    ![addempresa](https://github.com/jz1k/Twitter-Data-Analytics/tree/main/capturas/addempresa.jpg)
+    ![addempresa](https://github.com/jz1k/Twitter-Data-Analytics/blob/main/capturas/addempresa.jpg?raw=true)
 
 
 ## Databricks
-![parametrizacion databricks](https://github.com/jz1k/Twitter-Data-Analytics/tree/main/capturas/paradata.jpg)
+![parametrizacion databricks](https://github.com/jz1k/Twitter-Data-Analytics/blob/main/capturas/paradata.jpg?raw=true)
 
 - **Código Databricks**:
   ```python
@@ -99,12 +99,14 @@ Este proyecto se centra en el análisis de datos de Twitter para extraer informa
 ## OutputDataFlow
 
 - **Primer intento**: No completado debido a limitaciones de tiempo.
-    ![output fail](https://github.com/jz1k/Twitter-Data-Analytics/tree/main/capturas/outputfail.jpg)
+    ![output fail](https://github.com/jz1k/Twitter-Data-Analytics/blob/main/capturas/outputfail.jpg?raw=true)
+
+
 - **DataFlow Final**: Debido a temas de tiempo, se realizó una estructura mucho mas simple
   - Se parametriza con el nombre de la empresa y se hace la ingesta de los datos procesados y los sentimientos.
   - Se unen con un JOIN RIGHT unificando IDs para evitar duplicaciones, agrupando por ID.
   - Se envía mediante el SINK parametrizado a la base de datos SQL.
-    ![output](https://github.com/jz1k/Twitter-Data-Analytics/tree/main/capturas/output.jpg)
+    ![output](https://github.com/jz1k/Twitter-Data-Analytics/blob/main/capturas/output.jpg?raw=true)
 
 ## Power BI
 
