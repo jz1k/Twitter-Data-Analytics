@@ -117,5 +117,3 @@ Este proyecto se centra en el análisis de datos de Twitter para extraer informa
   - Problema con DirectQuery solucionado importando la BBDD para un gráfico específico.
   
   [Visualización datos en Power BI](https://github.com/jz1k/Twitter-Data-Analytics/blob/main/Estadisticas/Visualizacion_Bailon_TwitterData.pdf)
-
-Este README proporciona una visión general y los pasos detallados del proyecto Twitter Data Analytics, facilitando la comprensión y reproducción del análisis realizado.
